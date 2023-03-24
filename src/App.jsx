@@ -1,15 +1,40 @@
-import React from 'react'
-import { Link, BrowserRouter as Router, } from 'react-router-dom'
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import HomeContainer from './containers/HomeContainer'
+import Grid from '@mui/material/Grid'
+import CustomersContainer from './containers/CustomersContainer'
 
-function App() {
+function App2() {
   return (
-    <Router>
-    <div className='App'>
-      <Link to='/customers'>Customers</Link><br />
-      <Link to='/customers/30000000'>Customers 30,000,000</Link>
-    </div>
-    </Router>
+    <div>App</div>
   )
 }
 
-export default App
+export default class App extends Component {
+
+
+  render() {
+    return (
+      <Grid 
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+          sx={{
+            border:'solid',
+            backgroundColor:'red'
+          }}
+      >
+        
+      <Router>
+        <Routes>
+          <Route path='/' element= {<HomeContainer/>} />
+          <Route path='/customers' element= {<CustomersContainer/>} />
+          <Route path='/customers/:dni' element= {<App2/>} />
+          <Route path='/customers/new' element= {<App2/>} />
+        </Routes>
+      </Router>
+      </Grid>
+    )
+  }
+}

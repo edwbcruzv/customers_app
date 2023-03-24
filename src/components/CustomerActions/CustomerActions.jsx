@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Grid } from '@mui/material'
 
 function CustomerActions({children}) {
   return (
-    <div>
-        <div className="customers-action">
-            <div>{children}</div>
-        </div>
-    </div>
+    <Grid item spacing={1}>
+      {children}
+    </Grid>
   )
 }
 
