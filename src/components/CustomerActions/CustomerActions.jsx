@@ -4,7 +4,7 @@ import { Grid } from '@mui/material'
 
 function CustomerActions({children}) {
   return (
-    <Grid item spacing={1}>
+    <Grid item>
       {children}
     </Grid>
   )
